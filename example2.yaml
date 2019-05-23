@@ -1,0 +1,18 @@
+---
+- name: Set NTP Servers
+  hosts: sandbox
+  gather_facts: no
+  
+  tasks: 
+    - name: Set NTP Servers
+      ios_ntp:
+        server: '{{ item }}'
+        state: present
+      with_items:
+        - 10.11.100.65
+        - 10.12.100.65
+      register: ios_return
+
+    - name: "Print set of commands executed"
+      debug: msg="{{ios_return}}"
+

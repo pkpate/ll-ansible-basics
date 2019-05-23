@@ -1,0 +1,8 @@
+feature: bgp
+asn: 65001
+
+core_routers:
+  - router: 10.10.10.1
+    router_id: 1.1.1.1
+  - router: 10.10.10.2
+    router_id: 2.2.2.2

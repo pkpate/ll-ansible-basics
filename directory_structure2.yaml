@@ -1,0 +1,21 @@
+inventories/
+   prod/
+      hosts                   # inventory file for production environment
+      group_vars/
+         core.yaml            # here we assign variables to particular groups
+         distriubtion.yaml
+         access.yaml
+      host_vars/
+         10.10.10.75.yaml     # here we assign variables to particular hosts
+         10.10.10.76.yaml
+
+   lab/
+      hosts                   # inventory file for lab environment
+      group_vars/
+         core.yaml            # here we assign variables to particular groups
+         distriubtion.yaml
+         access.yaml
+      host_vars/
+         10.20.20.75.yaml     # here we assign variables to particular hosts
+         10.20.20.76.yaml
+

@@ -1,0 +1,15 @@
+---
+- name: Backup Configuration
+  hosts: sandbox
+  gather_facts: no
+  
+  tasks: 
+    - name: Backup Running Configuration to File
+      ios_config: 
+        backup: yes
+        backup_options:
+          filename: '{{ inventory_hostname }}_before.cfg'
+      register: ios_backup_details
+
+    - name: "Print details of IOS backup operation"
+      debug: msg="{{ios_backup_details}}"

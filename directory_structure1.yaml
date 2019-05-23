@@ -1,0 +1,29 @@
+hosts                     # inventory file
+lab                       # inventory file for lab environment
+prod                      # inventory file for prod environment
+
+group_vars/
+   core.yaml              # here we assign variables to particular groups
+   distribution.yaml
+   access.yaml
+host_vars/
+   10.20.20.75.yaml       # here we assign variables to particular hosts
+   10.20.20.76.yaml
+
+playbook.yaml             # main playbook associated with project
+playbook2.yaml            # secondary playbook associated with project
+
+roles/
+    nxos_vpc/               # this hierarchy represents a "role"
+        tasks/            #
+            main.yml      #  <-- tasks file can include smaller files if warranted
+        templates/        #  <-- files for use with the template resource
+            ntp.conf.j2   #  <------- templates end in .j2
+        vars/             #
+            main.yml      #  <-- variables associated with this role
+        defaults/         #
+            main.yml      #  <-- default lower priority variables for this role
+
+    nxos_ospf/              # same kind of structure as "nxos_vpc" was above
+    nxos_l3_interfaces/     # ""
+    nxos_vlans/             # ""

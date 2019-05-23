@@ -1,0 +1,9 @@
+---
+- name: Generate Configuration from Template
+  hosts: sandbox
+  gather_facts: no
+
+  tasks: 
+    - name: "Create Loopback Interface"
+      ios_config: 
+        src: "loopback_config.j2"

@@ -1,0 +1,19 @@
+[all:vars]
+ansible_python_interpreter="/usr/bin/env python"
+
+localhost ansible_connection=local
+
+[sandbox]
+ios-xe-mgmt.cisco.com ansible_port=8181
+
+[core]
+10.10.10.1
+10.10.10.2
+
+[distribution]
+10.10.20.1
+10.10.20.2
+
+[access]
+10.10.30.1
+10.10.30.2
